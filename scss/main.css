@@ -11953,4 +11953,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.text-justify {
+  text-align: justify;
 }/*# sourceMappingURL=main.css.map */
