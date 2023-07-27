@@ -23,9 +23,9 @@ function getToken(){
 }
 
 function setCookie(name,value,days) {
-    var expires = "";
+    let expires = "";
     if (days) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + (days*24*60*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
@@ -33,12 +33,12 @@ function setCookie(name,value,days) {
 }
 
 function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for(const element of ca) {
+        let c = element;
+        while (c.startsWith(' ')) c = c.substring(1,c.length);
+        if (c.startsWith(nameEQ)) return c.substring(nameEQ.length,c.length);
     }
     return null;
 }
