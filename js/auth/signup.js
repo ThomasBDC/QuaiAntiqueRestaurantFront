@@ -110,7 +110,7 @@ function InscrireUtilisateur(){
         redirect: 'follow'
     };
 
-    fetch("https://127.0.0.1:8000/api/registration", requestOptions)
+    fetch(apiUrl+"registration", requestOptions)
     .then(response => {
         if(response.ok){
             return response.json();
@@ -124,4 +124,4 @@ function InscrireUtilisateur(){
         document.location.href="/signin";
     })
     .catch(error => console.log('error', error));
-    }
+}
